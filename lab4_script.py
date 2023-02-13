@@ -2,12 +2,14 @@ from log_analysis import get_log_file_path_from_cmd_line, filter_log_by_regex
 import pandas as pd
 def main():
     log_file = get_log_file_path_from_cmd_line(1)
-    generate_port_traffic_report(log_file, 1026)
-
+    dpt_tally = tally_port_traffic(log_file)
+    for port, count in dpt_tally.items():
+        if count > 100:
+            generate_port_traffic_report(log_file, port)
 
 
 def tally_port_traffic(log_file):
-    dest_port_logs = filter_log_by_regex(log_file, 'DPT=(.+?)')[1]
+    dest_port_logs = filter_log_by_regex(log_file, 'DPT=(.+?) ')[1]
     port_dict = {}
     for dpt_tup in dest_port_logs:
         dpt_num = dpt_tup[0]
