@@ -11,7 +11,20 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["C:\\Scripting - Mark Noble\\gateway.log"]
+            "args": [
+                "C:\\Users\\markn\\OneDrive\\Documents\\GitHub\\COMP593--Lab4\\gateway.log"
+            ]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "C:\\Users\\markn\\OneDrive\\Documents\\GitHub\\COMP593--Lab4\\gateway.log"
+            ]
         }
     ]
 }
